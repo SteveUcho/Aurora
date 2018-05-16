@@ -1,7 +1,7 @@
 # Aurora
-Hey there
+- Hey there
 This is Aurora - its just a placeholder
-Hoping to make this an educational machine learning visualizer
+- Hoping to make this an educational machine learning visualizer
 
 # What I mean
 You'll be able to create, run, and debug your models using Aurora
