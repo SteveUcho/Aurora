@@ -1,0 +1,14 @@
+{
+  "name": "Aurora",
+  "version": "1.0.0",
+  "description": "Keras visualizer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "stevo",
+  "license": "",
+  "dependencies": {
+    "electron": "^2.0.0"
+  }
+}
