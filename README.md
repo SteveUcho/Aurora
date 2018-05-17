@@ -14,5 +14,6 @@ Most of all, little to no code would be required!
 > **NOTE**: this is just testing stuff, so don't expect anything *too* crazy rn...
 * Clone the repository
 * Download [Node.js](https://nodejs.org/en/)
+> If you're on a mac and have HomeBrew installed, use `brew install nodejs`
 * `cd` to Aurora
 * Run `npm start`
