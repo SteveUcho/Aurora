@@ -18,6 +18,12 @@ Most of all, little to no code would be required!
 3. `cd` to Aurora
 4. Run `npm start`
 
+## Todo list:
+- [x] add proof of concept tensorflow button
+- [ ] separate button into different layers
+- [ ] buttons write to file
+- [ ] run file
+
 ## Resources
 ### Docs
 * [Electron](electron.atom.io/docs)
