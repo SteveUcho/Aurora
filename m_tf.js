@@ -9,13 +9,19 @@ const fs = require('fs');   // writes and reads files
 let tfTest = document.getElementById('tf-test');
 tfTest.addEventListener('click', function(){
     // spawn is a node method to call commands from command line
+    var spawn = require('child_process').spawn,
     py = spawn('python3', ['tf-test.py']);   // first entry is the command, second is the arguments
+    var data = 203
+
     py.stdout.on('data', function(data){    // gets data from print statements
         let text = document.createElement('p');  // make p element
         text.textContent = data.toString();      // save data to p element
         // text.style = 'width: 100vw'
         document.body.appendChild(text);         // append p element to body
     });
+
+    py.stdin.write(JSON.stringify(data));
+    py.stdin.end();
 });
 
 // finding ol
