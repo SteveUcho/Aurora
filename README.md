@@ -25,8 +25,9 @@ Most of all, little to no code would be required!
 * [mongoDB](http://mongodb.github.io/node-mongodb-native/3.0/quick-start/quick-start/)
 * Easy to use Electron packager: [Electron Packager](https://github.com/electron-userland/electron-packager)
 * [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/)
+* [Getting started with Tensorflow](https://www.tensorflow.org/get_started/eager)
 
 ### Videos
 * [Example of node.js](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV)
 * [Example of electron](https://www.youtube.com/watch?v=kN1Czs0m1SU&t=327s)
-* 
+* [Executing code with Tensorflow Eager and Keras](https://www.youtube.com/watch?v=tjsHSIG8I08)
