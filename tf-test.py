@@ -85,7 +85,7 @@ def main():
     #get our data as an array from read_in()
     lines = read_in()
 
-    print(lines)
+    print("SUCCESS RECIEVED: lines")
 
 
     #NeuralNetwork(lines)
