@@ -22,21 +22,20 @@ openWin.addEventListener('click', function(){
     // creating such window with stuff in pageTwo.html
     win.loadFile('html/pageTwo.html');
 }, false);
-
-
 // finding tf test button
 let tfTest = document.getElementById('tf-test')
 tfTest.addEventListener('click', function(){
     // spawn is a node method to call commands from command line
     py = spawn('python3', ['tf-test.py'])   // first entry is the command, second is the arguments
+    
     py.stdout.on('data', function(data){    // 
         let text = document.createElement('p')
         text.textContent = data.toString()
         text.style = 'width: 100vw'
         document.body.appendChild(text)
     })
+    
 })
-
 
 // creating a button
 let openDev = document.createElement('button');
