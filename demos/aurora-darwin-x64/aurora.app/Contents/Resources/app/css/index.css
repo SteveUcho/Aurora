@@ -1,0 +1,6 @@
+.grab-bar {
+    -webkit-app-region: drag;
+    height: 30px;
+    width: 100%;
+    background-color: coral;
+}
