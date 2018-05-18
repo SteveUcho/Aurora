@@ -2,12 +2,12 @@
 const electron = require('electron');
 const remot = require('electron').remote
 const path = require('path');
+const spawn = require('child_process').spawn;
 const BrowserWindow = electron.remote.BrowserWindow;
 
 // re-assigning the button in index.html whose id is new-window
 let openWin = document.getElementById('new-window');
 openWin.textContent = "Open Window";
-
 // giving the button new functionalities
 openWin.addEventListener('click', function(){
     // this specifies what window I want before creation
@@ -24,9 +24,22 @@ openWin.addEventListener('click', function(){
 }, false);
 
 
+// finding tf test button
+let tfTest = document.getElementById('tf-test')
+tfTest.addEventListener('click', function(){
+    // spawn is a node method to call commands from command line
+    py = spawn('python3', ['tf-test.py'])   // first entry is the command, second is the arguments
+    py.stdout.on('data', function(data){    // 
+        let text = document.createElement('p')
+        text.textContent = data.toString()
+        text.style = 'width: 100vw'
+        document.body.appendChild(text)
+    })
+})
+
+
 // creating a button
 let openDev = document.createElement('button');
-
 // due to electron bug, webkit drag does not work with dev tools open
 // here i'm making a button to easily access it so that it can ve closed
 // another option is to open dev tools and make it a pop up
@@ -40,6 +53,7 @@ openDev.addEventListener('click', function(){
 })
 // adding the button to the current page
 document.body.appendChild(openDev)
+
 
 // here i'm creating a refresh button so thats its easier
 // to reload the new html that i write
