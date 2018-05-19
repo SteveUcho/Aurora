@@ -81,15 +81,8 @@ def NeuralNetwork(int epoch):
         if epoch % 50 == 0:
             print("Epoch {:03d}: Loss: {:.3f}, Accuracy: {:.3%}".format(epoch, epoch_loss_avg.result(), epoch_accuracy.result()))
 
-def main():
-    #get our data as an array from read_in()
-    lines = read_in()
+int main():
+    #stuff
 
-    print("SUCCESS RECIEVED: lines")
-
-
-    #NeuralNetwork(lines)
-
-#start process
 if __name__ == '__main__':
     main()
