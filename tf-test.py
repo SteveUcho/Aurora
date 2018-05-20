@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow.contrib.eager as tfe
 
-def NeuralNetwork(int epoch):
+import sys, json
+
+def NeuralNetwork(epoch):
     tf.enable_eager_execution()
 
     print("TensorFlow version: {}".format(tf.VERSION))
@@ -81,8 +83,9 @@ def NeuralNetwork(int epoch):
         if epoch % 50 == 0:
             print("Epoch {:03d}: Loss: {:.3f}, Accuracy: {:.3%}".format(epoch, epoch_loss_avg.result(), epoch_accuracy.result()))
 
-int main():
+def main():
     #stuff
+
 
 if __name__ == '__main__':
     main()

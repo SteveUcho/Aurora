@@ -3,6 +3,8 @@ const electron = require('electron');
 const {app, BrowserWindow} = electron;
 const url = require('url');
 const path = require('path');
+const fs = require('fs');
+const spawn = require('child_process').spawn;
 
 // here i'm turning on the app
 // ready is a keyword, other keywords can be found in the electron documentation
@@ -16,11 +18,9 @@ app.on('ready', function(){
     });
     // loading file
     win.loadFile('html/index.html');
+    // fixPath();
 });
 
-// not sure if this works
-// don't think its neccesary
-    // exports.openWindow = function(filename) {
-    //     let page = win
-    //     win.loadFile('html/' + filename + ".html")
-    // }
+app.on('window-all-closed', function(){
+    app.quit()
+})
