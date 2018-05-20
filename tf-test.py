@@ -85,7 +85,7 @@ def NeuralNetwork(epoch):
 
 def main():
     #stuff
-    lines = json.load(sys.stdin.readlines()[0])
+    # lines = json.load(sys.stdin.read())
 
     print('Hey look at this!', lines)
 
