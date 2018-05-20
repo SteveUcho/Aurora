@@ -19,10 +19,10 @@ tfTest.addEventListener('click', function(){
     // spawn is a node method to call commands from command line
     // let file = path.join(__dirname, '../', 'tf-test.py').toString()
     // console.log(file);
-    py = spawn('python3', ['../tf-test.py'], {shell: true, stdio:['pipe', 'pipe', 'pipe']});   // first entry is the command, second is the arguments
+    py = spawn('python3', ['./tf-test.py'], {shell: true, stdio:['pipe', 'pipe', 'pipe']});   // first entry is the command, second is the arguments
     console.log('ran!')
 
-    var dat = '203'
+    var dat = 203
 
     console.log('var set!')
 
@@ -36,7 +36,7 @@ tfTest.addEventListener('click', function(){
         console.log('done')
     });
 
-    py.stdin.write(dat);
+    py.stdin.write(JSON.stringify(dat));
     py.stdin.end();
 });
 
