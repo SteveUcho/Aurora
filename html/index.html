@@ -21,9 +21,17 @@
             <ol id="steps">
             </ol>
         </div>
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+            document.getElementById("new-window").addEventListener("click", clickButton);
+            
+            function clickButton(){
+                ipcRenderer.send('button', "rawr");
+            }
+        </script>
     </body>
     <footer>
-        <script src="../m_index.js"></script>
-        <script src="../m_tf.js"></script>
+        <script src="../main.js"></script>
     </footer>
 </html>

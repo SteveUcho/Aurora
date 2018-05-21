@@ -1,26 +1,67 @@
+/*
+=======================
+STARTING CODE
+=======================
+*/
+
 // these are import statements
 const electron = require('electron');
-const {app, BrowserWindow} = electron;
+const {app, BrowserWindow, Menu, ipcMain} = electron;
 const url = require('url');
 const path = require('path');
-const fs = require('fs');
 const spawn = require('child_process').spawn;
 
-// here i'm turning on the app
-// ready is a keyword, other keywords can be found in the electron documentation
+let mainWindow;
+let newWindow;
+
 app.on('ready', function(){
     // trying to make global variable, not sure if it works...
-    const win = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         titleBarStyle: 'hidden',
         backgroundColor: '#FFF',
         center: true,
-        opacity: .95
+        opacity: 1
     });
-    // loading file
-    win.loadFile('html/index.html');
-    // fixPath();
+    mainWindow.loadFile('html/index.html');
 });
 
 app.on('window-all-closed', function(){
     app.quit()
 })
+
+
+/*
+=======================
+Tensorflow Test Case
+=======================
+*/
+
+
+/*
+=======================
+Index HTML Button JS
+=======================
+*/
+
+function createWindow(){
+    newWindow = new BrowserWindow({
+        title: 'new Window!',
+        titleBarStyle: 'hidden',
+        backgroundColor: '#FFF',
+        center: true,
+        opacity: 1
+    });
+    newWindow.loadFile('html/pageTwo.html');
+}
+
+//Catching the button
+
+var fs = require('fs');
+ipcMain.on('button', function(e, items){
+    console.log(items);
+    //createWindow();
+    content = "Testing\nWant to keep testing\n does this work";
+    try { fs.writeFileSync('myfile.txt', content, 'utf-8'); }
+    catch(e) { alert('Failed to save the file !'); }
+});
+
