@@ -11,9 +11,6 @@ const url = require('url');
 const path = require('path');
 const spawn = require('child_process').spawn;
 
-let mainWindow;
-let newWindow;
-
 app.on('ready', function(){
     // trying to make global variable, not sure if it works...
     mainWindow = new BrowserWindow({
@@ -64,3 +61,8 @@ ipcMain.on('button', function(e, items){
     catch(e) { alert('Failed to save the file !'); }
 });
 
+/*
+===========================
+Index HTML Maintain Buttons
+===========================
+*/
