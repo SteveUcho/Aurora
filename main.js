@@ -10,6 +10,7 @@ const {app, BrowserWindow, Menu, ipcMain} = electron;
 const url = require('url');
 const path = require('path');
 const spawn = require('child_process').spawn;
+const fs = require('fs');
 
 app.on('ready', function(){
     // trying to make global variable, not sure if it works...
@@ -52,17 +53,14 @@ function createWindow(){
 }
 
 //Catching the button
-var fs = require('fs');
 ipcMain.on('button', function(e, items){
     console.log(items);
     //createWindow();
     content = "Testing\nWant to keep testing\n does this work";
-    try { fs.writeFileSync('myfile.txt', content, 'utf-8'); }
-    catch(e) { alert('Failed to save the file !'); }
+    // try { fs.writeFile('myfile.txt', content, 'utf-8'); }
+    // catch(e) { alert('Failed to save the file !'); }
+    fs.writeFile('myfile.txt', content, 'utf-8', (err) => {
+        if (err) throw err;
+        console.log('Data written!');
+    });
 });
-
-/*
-===========================
-Index HTML Maintain Buttons
-===========================
-*/
