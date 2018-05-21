@@ -55,7 +55,6 @@ function createWindow(){
 }
 
 //Catching the button
-
 var fs = require('fs');
 ipcMain.on('button', function(e, items){
     console.log(items);
