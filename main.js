@@ -1,8 +1,8 @@
-/*
-=======================
-STARTING CODE
-=======================
-*/
+// /*
+// =======================
+// STARTING CODE
+// =======================
+// */
 
 // these are import statements
 const electron = require('electron');

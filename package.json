@@ -1,13 +1,25 @@
 {
-  "name": "av2",
+  "name": "aurora",
   "version": "1.0.0",
-  "description": "",
+  "description": "model visualizer",
   "main": "main.js",
   "scripts": {
+    "test": "console.log(\"hello world\")",
     "start": "electron ."
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveUcho/Aurora.git"
+  },
+  "keywords": [
+    "keras"
+  ],
+  "author": "steveo",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SteveUcho/Aurora/issues"
+  },
+  "homepage": "https://github.com/SteveUcho/Aurora#readme",
   "dependencies": {
     "electron": "^2.0.1"
   }
