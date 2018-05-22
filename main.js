@@ -32,13 +32,6 @@ app.on('window-all-closed', function(){
 
 /*
 =======================
-Tensorflow Test Case
-=======================
-*/
-
-
-/*
-=======================
 Index HTML Button JS
 =======================
 */
