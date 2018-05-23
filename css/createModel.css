@@ -1,0 +1,20 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    border-style: solid;
+    border-radius: 2px;;
+    border-width: 1px;
+    /* width: 50%; */
+}
+
+.node{
+    background-color: aquamarine;
+}
+
+.opti{
+    background-color: coral;
+}

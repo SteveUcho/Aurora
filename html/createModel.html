@@ -1,0 +1,60 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Create Json</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
+        <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
+        <link href="../css/main.css" rel="stylesheet" type="text/css">
+        <link href="../css/createModel.css" rel="stylesheet" type="text/css">
+        <script>
+            window.$ = window.jQuery = require('../jquery/external/jquery/jquery.js');
+        </script>
+        <script src="../jquery/jquery-ui.min.js"></script>
+        <script>
+            $( function() {
+                $( ".sortable" ).sortable({
+                    revert: true
+                });
+                $( ".draggable" ).draggable({
+                    connectToSortable: ".sortable",
+                    helper: "clone",
+                    revert: "invalid"
+                });
+                $( "ul, li" ).disableSelection();
+            } );
+        </script>
+    </head>
+    <body>
+        <div class="grab-bar"></div>
+        <div class="body container">
+            <h1>Create Model</h1>
+            <button>Testing</button>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Model</h3>
+                    <ul class="sortable">
+                        <li class="ui-state-default">Item 1</li>
+                        <li class="ui-state-default">Item 2</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Kinds of Nodes</h3>
+                    <ul id="nodes">
+                        <li class="node draggable ui-state-default">Item 1</li>
+                        <li class="node draggable ui-state-default">Item 2</li>
+                        <li class="node draggable ui-state-default">Item 3</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Optimizers</h3>
+                    <ul id="opti">
+                        <li class="opti draggable ui-state-default">Item 1</li>
+                        <li class="opti draggable ui-state-default">Item 2</li>
+                        <li class="opti draggable ui-state-default">Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

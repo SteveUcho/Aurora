@@ -2,17 +2,22 @@
 <html>
     <head>
         <title>Hello World</title>
-        <link href="../css/index.css" rel="stylesheet" type="text/css">
+        <link href="../css/main.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.dom.js"></script>
+        <script language="javascript" type="text/javascript" src="../p5TestCode/GeneticVehicles/vehicle.js"></script>
+        <script language="javascript" type="text/javascript" src="../p5TestCode/GeneticVehicles/sketch.js"></script>
     </head>
     <body>
         <div class="grab-bar"></div>
-        <div style="padding: 20px">
+        <div class="body container">
             <h1>Hello</h1>
             <h3>Examples:</h3>
             <ul>
                 <li><button id="tf-test">Run Iris Classifier</button></li>
                 <li><button id="new-window">Page 2</button></li>
+                <li><button id="send-msg">Send Msg</button></li>
             </ul>
             <h3>Maintanance:</h3>
             <ul id="maintain">
@@ -25,7 +30,7 @@
     <footer>
         <script>
             const ipcRenderer = require('electron').ipcRenderer;
-            document.getElementById("new-window").addEventListener("click", clickButton);
+            document.getElementById("send-msg").addEventListener("click", clickButton);
             
             function clickButton(){
                 ipcRenderer.send('button', "rawr");
@@ -36,9 +41,6 @@
             Testing Daniel Shiffman Code Below:
             Trying to see what will happen when you link it to a javaapplication app and how it will show up. 
         -->
-        <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
-        <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.dom.js"></script>
-        <script language="javascript" type="text/javascript" src="../p5TestCode/GeneticVehicles/vehicle.js"></script>
-        <script language="javascript" type="text/javascript" src="../p5TestCode/GeneticVehicles/sketch.js"></script>
+        
     </footer>
 </html>
