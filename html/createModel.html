@@ -76,6 +76,7 @@
                 temp.push(sortableArray[i].innerHTML);
             }
             Model.push(temp);
+            Model.push("\n");
             temp = [];
             //Nodes
             var sortableNodes = document.getElementById("nodes").getElementsByTagName("li");
@@ -84,6 +85,7 @@
                 temp.push(sortableNodes[i].innerHTML);
             }
             Model.push(temp);
+            Model.push("\n");
             temp = [];
             
             //opti
@@ -93,6 +95,7 @@
                 temp.push(sortableOpti[i].innerHTML);
             }
             Model.push(temp);
+            Model.push("\n");
             temp = [];
 
             ipcRenderer.send("submitModel", Model);

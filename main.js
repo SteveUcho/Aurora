@@ -57,4 +57,8 @@ ipcMain.on('button', function(e, items){
 
 ipcMain.on("submitModel", function(e, items){
     console.log(items);
+    fs.writeFile('myfile.txt', items, 'utf-8', (err) => {
+        if (err) throw err;
+        console.log('Data written!');
+    });
 });
