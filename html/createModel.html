@@ -33,9 +33,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Model</h3>
-                    <ul class="sortable">
+                    <ul id="sortable">
                         <li class="ui-state-default">Item 1</li>
                         <li class="ui-state-default">Item 2</li>
+                        <li class="ui-state-default">Item 3</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -52,9 +53,49 @@
                         <li class="opti draggable ui-state-default">Item 1</li>
                         <li class="opti draggable ui-state-default">Item 2</li>
                         <li class="opti draggable ui-state-default">Item 3</li>
+                        <li class="opti draggable ui-state-default">Item 4</li>
                     </ul>
                 </div>
             </div>
+            <li><button id="collectModel">Submit</button></li>
         </div>
     </body>
+
+    <script>
+        const ipcRenderer = require('electron').ipcRenderer;
+        document.getElementById("collectModel").addEventListener("click", clickButton);
+        function clickButton(){
+
+            Model = [];
+            temp = [];
+
+            //sortable array
+            var sortableArray = document.getElementById("sortable").getElementsByTagName("li");
+            lengthSortable = document.getElementById("sortable").getElementsByTagName("li").length
+            for(var i = 0; i < lengthSortable; i++){
+                temp.push(sortableArray[i].innerHTML);
+            }
+            Model.push(temp);
+            temp = [];
+            //Nodes
+            var sortableNodes = document.getElementById("nodes").getElementsByTagName("li");
+            lengthNodes = document.getElementById("nodes").getElementsByTagName("li").length
+            for(var i = 0; i < lengthNodes; i++){
+                temp.push(sortableNodes[i].innerHTML);
+            }
+            Model.push(temp);
+            temp = [];
+            
+            //opti
+            var sortableOpti = document.getElementById("opti").getElementsByTagName("li");
+            lengthOpti = document.getElementById("opti").getElementsByTagName("li").length
+            for(var i = 0; i < lengthOpti; i++){
+                temp.push(sortableOpti[i].innerHTML);
+            }
+            Model.push(temp);
+            temp = [];
+
+            ipcRenderer.send("submitModel", Model);
+        }
+    </script>
 </html>

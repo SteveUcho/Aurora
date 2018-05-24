@@ -1,26 +1,22 @@
 {
   "name": "aurora",
   "version": "1.0.0",
-  "description": "model visualizer",
+  "description": "* Hey there! This is Aurora\r * Its just a placeholder\r * Hoping to make this an educational machine learning visualizer",
   "main": "main.js",
   "scripts": {
-    "test": "console.log(\"hello world\")",
     "start": "electron ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SteveUcho/Aurora.git"
   },
-  "keywords": [
-    "keras"
-  ],
-  "author": "stevo",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/SteveUcho/Aurora/issues"
   },
   "homepage": "https://github.com/SteveUcho/Aurora#readme",
   "dependencies": {
-    "electron": "^2.0.1"
+    "electron": "^2.0.2"
   }
 }

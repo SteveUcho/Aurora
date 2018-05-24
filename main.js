@@ -48,12 +48,13 @@ function createWindow(){
 //Catching the button
 ipcMain.on('button', function(e, items){
     console.log(items);
-    //createWindow();
     content = "Testing\nWant to keep testing\n does this work";
-    // try { fs.writeFile('myfile.txt', content, 'utf-8'); }
-    // catch(e) { alert('Failed to save the file !'); }
     fs.writeFile('myfile.txt', content, 'utf-8', (err) => {
         if (err) throw err;
         console.log('Data written!');
     });
+});
+
+ipcMain.on("submitModel", function(e, items){
+    console.log(items);
 });
