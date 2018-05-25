@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SteveUcho/Aurora#readme",
   "dependencies": {
-    "electron": "^2.0.2"
+    "electron": "^2.0.2",
+    "npm": "^6.1.0"
   }
 }

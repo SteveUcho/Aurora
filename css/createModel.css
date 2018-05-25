@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -8,13 +12,18 @@ li {
     border-style: solid;
     border-radius: 2px;;
     border-width: 1px;
-    /* width: 50%; */
+    width: 50px;
+    margin: 0 auto;
 }
 
-.node{
+.node {
     background-color: aquamarine;
 }
 
-.opti{
+.opti {
     background-color: coral;
 }
+
+/* .ui-clone {
+    width: 100%;
+} */

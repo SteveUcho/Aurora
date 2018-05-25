@@ -13,13 +13,26 @@
         <script src="../jquery/jquery-ui.min.js"></script>
         <script>
             $( function() {
-                $( ".sortable" ).sortable({
-                    revert: true
+                $( "#sortable" ).sortable({
+                    revert: true,
+                    cursorAt:
+                    {
+                        top: 0,
+                        left: -35
+                    },
                 });
                 $( ".draggable" ).draggable({
-                    connectToSortable: ".sortable",
+                    connectToSortable: "#sortable",
+                    cursorAt:
+                    {
+                        top: 0,
+                        left: -35
+                    },
                     helper: "clone",
-                    revert: "invalid"
+                    start: function(e, ui)
+                    {
+                        $(ui.helper).addClass("ui-clone")
+                    },
                 });
                 $( "ul, li" ).disableSelection();
             } );
@@ -29,7 +42,7 @@
         <div class="grab-bar"></div>
         <div class="body container">
             <h1>Create Model</h1>
-            <button>Testing</button>
+            <!-- <button>Testing</button> -->
             <div class="row">
                 <div class="col-md-4">
                     <h3>Model</h3>
@@ -57,48 +70,10 @@
                     </ul>
                 </div>
             </div>
-            <li><button id="collectModel">Submit</button></li>
+            <button id="collectModel">Submit</button>
         </div>
     </body>
-
-    <script>
-        const ipcRenderer = require('electron').ipcRenderer;
-        document.getElementById("collectModel").addEventListener("click", clickButton);
-        function clickButton(){
-
-            Model = [];
-            temp = [];
-
-            //sortable array
-            var sortableArray = document.getElementById("sortable").getElementsByTagName("li");
-            lengthSortable = document.getElementById("sortable").getElementsByTagName("li").length
-            for(var i = 0; i < lengthSortable; i++){
-                temp.push(sortableArray[i].innerHTML);
-            }
-            Model.push(temp);
-            Model.push("\n");
-            temp = [];
-            //Nodes
-            var sortableNodes = document.getElementById("nodes").getElementsByTagName("li");
-            lengthNodes = document.getElementById("nodes").getElementsByTagName("li").length
-            for(var i = 0; i < lengthNodes; i++){
-                temp.push(sortableNodes[i].innerHTML);
-            }
-            Model.push(temp);
-            Model.push("\n");
-            temp = [];
-            
-            //opti
-            var sortableOpti = document.getElementById("opti").getElementsByTagName("li");
-            lengthOpti = document.getElementById("opti").getElementsByTagName("li").length
-            for(var i = 0; i < lengthOpti; i++){
-                temp.push(sortableOpti[i].innerHTML);
-            }
-            Model.push(temp);
-            Model.push("\n");
-            temp = [];
-
-            ipcRenderer.send("submitModel", Model);
-        }
-    </script>
+    <footer>
+        <script src="../createJson.js"></script>
+    </footer>
 </html>
