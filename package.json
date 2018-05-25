@@ -2,7 +2,7 @@
   "name": "aurora",
   "version": "1.0.0",
   "description": "* Hey there! This is Aurora\r * Its just a placeholder\r * Hoping to make this an educational machine learning visualizer",
-  "main": "main.js",
+  "main": "js/main.js",
   "scripts": {
     "start": "electron ."
   },
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/SteveUcho/Aurora#readme",
   "dependencies": {
-    "electron": "^2.0.2",
-    "npm": "^6.1.0"
+    "electron": "^2.0.2"
   }
 }
