@@ -19,16 +19,13 @@ Most of all, little to no code would be required!
 4. Run `npm start`
 
 ## Todo list:
-- [x] add proof of concept tensorflow button
-- [ ] separate button into different layers
-- [ ] buttons write to file
-- [ ] run file
+- [ ] Create more draggable options
+- [ ] Create first actual model
 
 ## Resources
 ### Docs
 * [Electron](electron.atom.io/docs)
 * [node.js](https://nodejs.org/en/docs/guides/)
-* [mongoDB](http://mongodb.github.io/node-mongodb-native/3.0/quick-start/quick-start/)
 * Easy to use Electron packager: [Electron Packager](https://github.com/electron-userland/electron-packager)
 * [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/)
 * [Getting started with Tensorflow](https://www.tensorflow.org/get_started/eager)
