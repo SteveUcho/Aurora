@@ -1,19 +1,19 @@
 {
   "0": {
-    "name": "Item 1",
-    "type": "ui-state-default"
+    "name": "\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <p>Item 1</p>\n                                </div>\n                                <div class=\"node-here col-sm-6 ui-droppable\">\n                                    test\n                                </div>\n                            </div>\n                        ",
+    "type": "layer"
   },
   "1": {
-    "name": "Item 2",
-    "type": "node"
+    "name": "Item 1",
+    "type": "ui-state-default"
   },
   "2": {
     "name": "Item 2",
     "type": "ui-state-default"
   },
   "3": {
-    "name": "Item 3",
-    "type": "node"
+    "name": "\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <p>Item 1</p>\n                                </div>\n                                <div class=\"node-here col-sm-6 ui-droppable\">\n                                    test\n                                </div>\n                            </div>\n                        ",
+    "type": "layer"
   },
   "4": {
     "name": "Item 3",

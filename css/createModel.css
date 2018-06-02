@@ -1,19 +1,33 @@
-body {
+/* body {
     text-align: center;
-}
+} */
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 li {
     border-style: solid;
-    border-radius: 2px;;
+    border-radius: 2px;
     border-width: 1px;
+    height: 25px;
     width: 50px;
-    margin: 0 auto;
+    height: 30px;
+    /* margin: 0 auto; */
+}
+
+.layer {
+    width: 200px;
+}
+
+.node-here {
+    margin-top: 3px;
+    padding: 0;
+    background-color: white;
+    height: 23px;
+    width: 80px;
 }
 
 .node {
@@ -23,7 +37,3 @@ li {
 .opti {
     background-color: coral;
 }
-
-/* .ui-clone {
-    width: 100%;
-} */

@@ -4,7 +4,6 @@
         <title>Create Json</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
-        <link rel="stylesheet" href="../jquery/jquery-ui.min.css">
         <link href="../css/main.css" rel="stylesheet" type="text/css">
         <link href="../css/createModel.css" rel="stylesheet" type="text/css">
         <script>
@@ -15,24 +14,38 @@
             $( function() {
                 $( "#sortable" ).sortable({
                     revert: true,
-                    cursorAt:
-                    {
-                        top: 0,
-                        left: -35
-                    },
                 });
-                $( ".draggable" ).draggable({
+                $( ".layer" ).draggable({
                     connectToSortable: "#sortable",
-                    cursorAt:
-                    {
-                        top: 0,
-                        left: -35
+                    helper: function(e) {
+                        var help = $(this).clone();
+                        // help.css("width", "100%");
+                        return help;
                     },
-                    helper: "clone",
-                    start: function(e, ui)
-                    {
-                        $(ui.helper).addClass("ui-clone")
+                    // start: function(e) {
+                    //     $(this).css("width", "");
+                    // },
+                    stop: function(event, ui) {
+                        $(ui).css("width", "100%");
                     },
+                    revert: "true"
+                });
+                $(".node").draggable({
+                    revert: "valid",
+                    helper: function(e) {
+                        return $(this).clone();
+                    },
+                    stop: function(e, ui) {
+                        
+                    }
+                });
+                $(".node-here").droppable({
+                    accept: ".node",
+                    drop: function(e, ui) {
+                        $(this)
+                            .addClass("node")
+                            .html("dropped");
+                    }
                 });
                 $( "ul, li" ).disableSelection();
             } );
@@ -46,27 +59,36 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Model</h3>
-                    <ul id="sortable">
-                        <li class="ui-state-default">Item 1</li>
-                        <li class="ui-state-default">Item 2</li>
-                        <li class="ui-state-default">Item 3</li>
+                    <ul id="sortable" style="border-style: solid; border-radius: 2px; border-width: 1px; padding: 10px;">
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Kinds of Layers</h3>
+                    <ul id="layers">
+                        <li class="layer draggable ui-state-default">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>Item 1</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="node-here">
+                                        test
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="layer ui-state-default">Item 2</li>
+                        <li class="layer ui-state-default">Item 3</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h3>Kinds of Nodes</h3>
                     <ul id="nodes">
-                        <li class="node draggable ui-state-default">Item 1</li>
-                        <li class="node draggable ui-state-default">Item 2</li>
-                        <li class="node draggable ui-state-default">Item 3</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Optimizers</h3>
-                    <ul id="opti">
-                        <li class="opti draggable ui-state-default">Item 1</li>
-                        <li class="opti draggable ui-state-default">Item 2</li>
-                        <li class="opti draggable ui-state-default">Item 3</li>
-                        <li class="opti draggable ui-state-default">Item 4</li>
+                        <li class="node ui-state-default">Item 1</li>
+                        <li class="node ui-state-default">Item 2</li>
+                        <li class="node ui-state-default">Item 3</li>
+                        <li class="node ui-state-default">Item 4</li>
                     </ul>
                 </div>
             </div>
